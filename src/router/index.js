@@ -2,19 +2,20 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-const Login = () => import('views/login');
-const Notfound = () => import('views/404');
+const Layout = () => import('@/layout');
+// const Login = () => import('@/views/login');
+const Notfound = () => import('@/views/404.vue');
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Login
+    component: Layout
   },
   {
     path: '/login',
     name: 'Login',
-    component:Login
+    component:() => Notfound
   }
 ]
 
